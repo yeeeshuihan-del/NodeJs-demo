@@ -1,4 +1,9 @@
 {
+  /*
+  https://www.typescriptlang.org/tsconfig
+  https://github.com/tsconfig/bases#centralized-recommendations-for-tsconfig-bases
+  */
+
   "include": ["src/**/*"],
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
@@ -39,40 +44,48 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     // "target": "esnext",
-    "target": "es5",
+    
     "noUncheckedSideEffectImports": true, // 禁止单纯 import xxx
     // "rewriteRelativeImportExtensions": false,
     // "paths": {}, 
     // For nodejs:
     // "lib": ["esnext"],
-    "lib": ["ES5"],
-    //include @types/node only, while other @types will be ignored.
-    // "types": ["node"],
-    // and npm install -D @types/node
 
-    // Other Outputs
+
+    // emit
     "sourceMap": false,
+    // "downlevelIteration": true,  
+    // "emitBOM": false,
+    // "mapRoot": "https://my-website.com/debug/sourcemaps/", debug Ts使用
+
+    /*
+     No Emit - 
+      noEmit
+      Do not emit compiler output files like JavaScript source code, source-maps or declarations.
+      This makes room for another tool like Babel, or swc to handle converting the TypeScript file to a file which can run inside a JavaScript environment.
+      You can then use TypeScript as a tool for providing editor integration, and as a source code type-checker.
+    */
+    // "noEmit": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    // "allowJs": false,
+    // "checkJs": false,
+    "isolatedModules": true, //支持单文件编译，兼容babel...
+    "verbatimModuleSyntax": true, //可控import行为，side-effect控制, 开启之后不支持混用ems/cjs
+    // "types": ["node"],
     // "declaration": true,
     // "declarationMap": true,
 
-    // "strictNullChecks": true,
-    
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": false,
-    // "noUnusedParameters": false,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
+    //language and environment
+    "target": "es5",
+    /*
+    Changing target also changes the default value of lib. You may “mix and match” target and lib settings as desired, 
+    but you could just set target for convenience.
+    */
+    // "lib": ["esnext"], 
 
-    // Recommended Options
     
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    
-    "moduleDetection": "force",
     "skipLibCheck": true,
   }
 }
