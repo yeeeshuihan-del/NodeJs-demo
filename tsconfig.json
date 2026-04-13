@@ -1,0 +1,78 @@
+{
+  "include": ["src/**/*"],
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // check options
+    "strict": true,
+    /*
+    alwaysStrict
+    strictNullChecks
+    strictBindCallApply
+    strictBuiltinIteratorReturn
+    strictFunctionTypes
+    strictPropertyInitialization
+    noImplicitAny
+    noImplicitThis
+    useUnknownInCatchVariables
+    */
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true, // "dark" | "light" 强制要求不能为undefined
+    "noFallthroughCasesInSwitch": true, // swith穿透
+    "noImplicitAny": false, // const a 未显示指定type, 支持默认any
+    "noImplicitOverride": false, //是否强制overide关键字
+    "noImplicitReturns": false, // method是否强制要写return type
+    "noImplicitThis": false, // this是否强制要
+    "noPropertyAccessFromIndexSignature": true, // 索引签名不确定存在使用[]访问
+    "noUncheckedIndexedAccess": true, // 需要处理对象属性的 | undefined
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strictBindCallApply": true, //函数调用，参数类型严格校验
+    // "strictFunctionTypes": false,
+    "strictNullChecks": true,
+    "useUnknownInCatchVariables": true,
+
+
+    // Module   See also https://aka.ms/tsconfig/module
+    // "allowArbitraryExtensions": false, 前端使用
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    // "target": "esnext",
+    "target": "es5",
+    "noUncheckedSideEffectImports": true, // 禁止单纯 import xxx
+    // "rewriteRelativeImportExtensions": false,
+    // "paths": {}, 
+    // For nodejs:
+    // "lib": ["esnext"],
+    "lib": ["ES5"],
+    //include @types/node only, while other @types will be ignored.
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": false,
+    // "declaration": true,
+    // "declarationMap": true,
+
+    // "strictNullChecks": true,
+    
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": false,
+    // "noUnusedParameters": false,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
