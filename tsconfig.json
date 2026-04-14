@@ -43,7 +43,6 @@
     "outDir": "./dist",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    // "target": "esnext",
     
     "noUncheckedSideEffectImports": true, // 禁止单纯 import xxx
     // "rewriteRelativeImportExtensions": false,
@@ -76,16 +75,15 @@
     // "declaration": true,
     // "declarationMap": true,
 
-
     //language and environment
-    "target": "es5",
+    "target": "esnext",
     /*
     Changing target also changes the default value of lib. You may “mix and match” target and lib settings as desired, 
     but you could just set target for convenience.
     */
     // "lib": ["esnext"], 
 
-    
+    //Skip type checking of declaration files.
     "skipLibCheck": true,
   }
 }
